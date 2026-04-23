@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Window Tab Grid",
+  "version": "0.1.0",
+  "description": "Browse and manage tabs in the current window.",
+  "permissions": ["tabs"],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_title": "Open tab grid"
+  }
+}

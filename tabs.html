@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tab Grid</title>
+    <link rel="stylesheet" href="tabs.css">
+    <script src="tabs.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="toolbar">
+        <div class="toolbar__heading">
+          <p class="toolbar__eyebrow">Current Window</p>
+          <h1>Tab Grid</h1>
+        </div>
+
+        <div class="toolbar__controls">
+          <label class="field field--search" for="searchInput">
+            <span>Search</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Find by title or URL"
+              autofocus
+              autocomplete="off"
+            >
+          </label>
+
+          <label class="field" for="pinFilter">
+            <span>Filter</span>
+            <select id="pinFilter">
+              <option value="all">All tabs</option>
+              <option value="pinned">Pinned</option>
+              <option value="unpinned">Unpinned</option>
+            </select>
+          </label>
+
+          <label class="field" for="sortOrder">
+            <span>Sort</span>
+            <select id="sortOrder">
+              <option value="lastAccessed">Last accessed</option>
+              <option value="index">Tab order</option>
+              <option value="title">Title</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <section class="summary">
+        <p id="summaryText">Loading tabs...</p>
+      </section>
+
+      <section id="emptyState" class="empty-state" hidden>
+        <h2>No matching tabs</h2>
+        <p>Try a different search or filter combination.</p>
+      </section>
+
+      <section id="tabGrid" class="tab-grid" aria-live="polite"></section>
+    </main>
+  </body>
+</html>

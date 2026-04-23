@@ -188,17 +188,34 @@ function createTabCard(tab) {
   title.className = "tab-card__title";
   title.textContent = tab.title || "Untitled tab";
 
+  const hostname = getHostname(tab.url);
+
   const host = document.createElement("p");
   host.className = "tab-card__host";
-  host.textContent = getHostname(tab.url);
+  host.textContent = hostname;
 
-  titleWrap.append(title, host);
+  const tooltip = document.createElement("div");
+  tooltip.className = "tab-card__tooltip";
+  tooltip.setAttribute("aria-hidden", "true");
+
+  const tooltipTitle = document.createElement("p");
+  tooltipTitle.className = "tab-card__tooltip-title";
+  tooltipTitle.textContent = tab.title || "Untitled tab";
+
+  const tooltipHost = document.createElement("p");
+  tooltipHost.className = "tab-card__tooltip-host";
+  tooltipHost.textContent = hostname;
+
+  tooltip.append(tooltipTitle, tooltipHost);
+  titleWrap.append(title, host, tooltip);
   identity.append(createFavicon(tab), titleWrap);
 
   const closeButton = document.createElement("button");
   closeButton.className = "tab-card__close";
   closeButton.type = "button";
-  closeButton.textContent = "Close";
+  closeButton.textContent = "×";
+  closeButton.setAttribute("aria-label", "Close tab");
+  closeButton.title = "Close tab";
   closeButton.addEventListener("click", (event) => {
     event.stopPropagation();
     closeTab(tab.id).catch(console.error);

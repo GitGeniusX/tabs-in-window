@@ -2,6 +2,8 @@
 
 Window Tab Grid is a Chromium extension that opens a dedicated tab manager for the current browser window.
 
+Current version: `0.2.0`
+
 Instead of hunting through a crowded tab strip, you get a clean visual grid where you can:
 
 - search tabs by title or URL
@@ -9,6 +11,10 @@ Instead of hunting through a crowded tab strip, you get a clean visual grid wher
 - sort by last accessed time, tab order, or title
 - jump directly to a tab
 - close tabs from the grid
+
+## Release Notes
+
+See [CHANGELOG.md](/Users/johanschmidt/devlocal/TabExtension/CHANGELOG.md) for version history and release notes.
 
 ## How It Works
 
@@ -44,7 +50,7 @@ These steps work for Chrome, Brave, Microsoft Edge, and other Chromium-based bro
 - Use `Filter` to show all, pinned, or unpinned tabs.
 - Use `Sort` to reorder the grid.
 - Click a card to activate that tab.
-- Click `Close` on a card to remove that tab.
+- Click the `×` button on a card to close that tab.
 
 ## Development
 
